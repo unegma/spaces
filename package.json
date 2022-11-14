@@ -34,6 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": ". .env && aws --profile $PROFILE s3 sync --delete ./build s3://$AWS_BUCKET_NAME",
+    "1-create-repo": ". .env",
     "1-create-bucket": ". .env && aws --profile $PROFILE s3api create-bucket --bucket $AWS_BUCKET_NAME --region $AWS_REGION --create-bucket-configuration LocationConstraint=$AWS_REGION",
     "2-configure-bucket": ". .env && aws --profile $PROFILE s3api put-bucket-policy --bucket $AWS_BUCKET_NAME --policy file:///$PWD/settings/bucket_policy.json && aws --profile $PROFILE s3 website s3://$AWS_BUCKET_NAME --index-document index.html --error-document index.html",
     "BUILD-AND-DEPLOY": "npm run build && npm run deploy",
