@@ -23,4 +23,3 @@ export default function Model({ ...props }: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload(SPACE_URI)
